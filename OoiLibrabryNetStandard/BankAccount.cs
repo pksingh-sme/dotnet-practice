@@ -8,3 +8,20 @@ public class BankAccount
     public static decimal InterestRate; // shared member
 }
 
+public class TextAndNumber
+{
+    public string Text;
+    public int Number;
+}
+
+public class LifeTheUniverseAndEverything
+{
+    public TextAndNumber GetTheData()
+    {
+        return new TextAndNumber
+        {
+            Text = "What's the meaning of life?",
+            Number = 50
+        };
+    }
+}
