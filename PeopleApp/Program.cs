@@ -2,47 +2,16 @@
 
 //Thread.CurrentThread.CurrentCulture =  System.Globalization.CultureInfo.GetCultureInfo("en-GB");
 
-Person bob = new();
+Person blankPerson = new();
+WriteLine(format:
+  "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
+  arg0: blankPerson.Name,
+  arg1: blankPerson.HomePlanet,
+  arg2: blankPerson.Instantiated);
 
-bob.Name = "Bob Smith";
-bob.DateOfBirth = new DateTime(1965, 12, 22); // C# 1.0 or later
-
-bob.BucketList =
-  WondersOfTheAncientWorld.HangingGardensOfBabylon
-  | WondersOfTheAncientWorld.MausoleumAtHalicarnassus;
-// bob.BucketList = (WondersOfTheAncientWorld)18;
-WriteLine($"{bob.Name}'s bucket list is {bob.BucketList}");
-
-
-
-
-bob.Children.Add(new Person { Name = "Alfred" }); // C# 3.0 and later
-bob.Children.Add(new() { Name = "Zoe" }); // C# 9.0 and later
-
-WriteLine($"{bob.Name} has {bob.Children.Count} children:");
-
-for (int childIndex = 0; childIndex < bob.Children.Count; childIndex++)
-{
-    WriteLine($"> {bob.Children[childIndex].Name}");
-}
-
-
-
-BankAccount.InterestRate = 0.012M;
-
-BankAccount johnAccount = new();
-johnAccount.AccountName = "My John Shaw";
-johnAccount.Balance = 5000;
-//johnAccount.InterestRate = 1;
-
-WriteLine(format: "{arg[0]} earned {arg[1]:C} interest is {arg[2]} was born {arg[3]}.",
-arg0: johnAccount.AccountName,
-arg1: johnAccount.Balance * BankAccount.InterestRate,
-arg2: Person.Species,
-arg3: bob.HomePlanet);
-
-BankAccount garyAccount = new();
-garyAccount.AccountName = "Mr. Gary Moore";
-garyAccount.Balance = 100;
-
-WriteLine(format: "{0} earned {1:C} interest.", arg0: garyAccount.AccountName, arg1: garyAccount.Balance * BankAccount.InterestRate);
+Person gunny = new(initialName: "Gunny", homePlanet: "Mars");
+WriteLine(format:
+  "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
+  arg0: gunny.Name,
+  arg1: gunny.HomePlanet,
+  arg2: gunny.Instantiated);
