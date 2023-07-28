@@ -5,6 +5,15 @@
 
 Person bob = new();
 
+int a = 10;
+int b = 20;
+int c = 30;
+WriteLine($"Before: a = {a}, b = {b}, c = {c}");
+bob.PassingParameters(a, ref b, out c);
+WriteLine($"After: a = {a}, b = {b}, c = {c}");
+
+
+/*
 bob.Name = "Bob Smith";
 bob.DateOfBirth = new DateTime(1965, 12, 22); // C# 1.0 or later
 
@@ -50,3 +59,7 @@ WriteLine($"Deconstructed: {name1}, {dob1}");
 
 var (name2, dob2, fav2) = bob;
 WriteLine($"Deconstructed: {name2}, {dob2}, {fav2}");
+
+WriteLine(bob.OptionalParameters());
+
+*/
