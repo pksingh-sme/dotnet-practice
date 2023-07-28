@@ -33,8 +33,13 @@ BankAccount.InterestRate = 0.012M;
 BankAccount johnAccount = new();
 johnAccount.AccountName = "My John Shaw";
 johnAccount.Balance = 5000;
+//johnAccount.InterestRate = 1;
 
-WriteLine(format: "{0} earned {1:C} interest.", arg0: johnAccount.AccountName, arg1: johnAccount.Balance * BankAccount.InterestRate);
+WriteLine(format: "{arg[0]} earned {arg[1]:C} interest is {arg[2]} was born {arg[3]}.",
+arg0: johnAccount.AccountName,
+arg1: johnAccount.Balance * BankAccount.InterestRate,
+arg2: Person.Species,
+arg3: bob.HomePlanet);
 
 BankAccount garyAccount = new();
 garyAccount.AccountName = "Mr. Gary Moore";
