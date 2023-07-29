@@ -1,7 +1,7 @@
 namespace Ooi.Shared;
 
 
-public class Person
+public partial class Person
 {
     // fields
     public string? Name;
